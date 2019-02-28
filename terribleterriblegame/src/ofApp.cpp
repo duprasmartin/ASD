@@ -1,10 +1,13 @@
 #include "ofApp.h"
+//#include "ball.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 // set position and speed of p1_paddle
     // set position and speed of p2_paddle;
     // set position and speed of ball
+    myBall.setSize(12);
+    myBall.setPosition(ofGetWidth()-50, ofGetHeight()-30);
     // set scores to 0
 }
 
@@ -30,7 +33,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    ofBackground(0,0,0);
+    // draw myball
+    ofSetColor(255,255,255);
+    ofDrawCircle(myBall.getPositionx(),myBall.getPositiony(), myBall.getSize());
 }
 
 //--------------------------------------------------------------
@@ -87,3 +93,27 @@ void ofApp::gotMessage(ofMessage msg){
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
+
+
+/////
+void Ball::setPosition(int x, int y){
+    m_positionx = x;
+    m_positiony = y;
+}
+
+int Ball::getPositionx(){
+    return m_positionx;
+}
+
+int Ball::getPositiony(){
+    return m_positiony;
+}
+
+void Ball::setSize(float s){
+    m_ballsize = s;
+}
+
+int Ball::getSize(){
+    return m_ballsize;
+}
+

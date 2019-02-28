@@ -13,11 +13,21 @@
 
 class Ball {
 public:
+    void setSize(float s);
+    int getSize();
+    void setPosition(int x, int y);
+    int getPositionx();
+    int getPositiony();
+    //ofPoint getPosition();
+    
+    void setSpeed(float s);
+    float getSpeed();
     
 private:
-    ofPoint m_position;
+    int m_positionx;
+    int m_positiony;
     int m_ballsize;
     float m_speedx;
     float m_speedy;
     
-}
+};
